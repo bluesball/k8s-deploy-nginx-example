@@ -7,12 +7,13 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
+    - host: teste.exemple.com
     - http:
         paths:
-          - path: /
+          - path: /metrics
             pathType: Prefix
             backend:
               service:
-                name: nginx-ing
+                name: nginx-svc
                 port:
-                  number: 9113
+                  name: metrics
